@@ -51,3 +51,4 @@ class Stack:
         if self.size != 0:
             self.size = self.size - 1
         return self.storage.remove_tail()
+
