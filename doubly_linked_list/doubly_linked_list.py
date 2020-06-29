@@ -118,24 +118,15 @@ class DoublyLinkedList:
         if(self.length <= 0):
             return None
         if(self.head == node):
-            return self.head
+            return
         if(self.tail == node):
-            self.add_to_head(node)
-            self.tail = self.tail.prev
-            self.length -= 1
+            self.tail = node.prev
         else:
-            count = 0
-            current = self.head.next
-            while(count < self.length):
-                if(current.next.value == node.value):
-                    current.next = current.next.next
-                    current.next.next.prev = current
-                    self.add_to_head(node)
-                    break
-                else:
-                    count = count+1
-                    current = current.next
-
+            node.prev.next = node.next
+        node.prev.next = node.next
+        node.prev = None
+        node.next = self.head
+        self.head = node
 
 
     """Removes the input node from its current spot in the 
