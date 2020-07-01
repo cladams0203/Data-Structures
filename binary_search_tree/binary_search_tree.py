@@ -94,7 +94,11 @@ class BSTNode:
     # Print the value of every node, starting with the given node,
     # in an iterative depth first traversal
     def dft_print(self, node):
-        pass
+        print(node.value)
+        if(node.left):
+            node.left.dft_print(node.left)
+        if(node.right):
+            node.right.dft_print(node.right)
 
     # Stretch Goals -------------------------
     # Note: Research may be required
