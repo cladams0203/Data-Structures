@@ -12,6 +12,9 @@ return elements in Last In First Out order.
    Make sure the Stack tests pass.
 3. What is the difference between using an array vs. a linked list when 
    implementing a Stack?
+   
+   Ans: A linked list object has a pointer to the next item so they can be scattered in memory.
+        An array has to be together in memory because it depends on the next memory location.
 """
 
 #  This is the Stack implementation using an array
