@@ -19,18 +19,32 @@ class BSTNode:
 
     # Insert the given value into the tree
     def insert(self, value):
-        # if(self.value == value):
-        #     return
-        if(self.value > value):
-            if(self.left == None):
-                self.left = BSTNode(value)
-            else:
-                self.left.insert(value)
-        if(self.value <= value):
-            if(self.right == None):
-                self.right = BSTNode(value)
-            else:
-                self.right.insert(value)
+        # solution without recursion
+        cur = self
+        while cur is not None:
+            if cur.value > value:
+                if cur.left == None:
+                    cur.left = BSTNode(value)
+                    return cur.left.value
+                else:
+                    cur = cur.left
+            if cur.value <= value:
+                if cur.right == None:
+                    cur.right = BSTNode(value)
+                    return cur.right.value
+                else:
+                    cur = cur.right
+        # solution with recursion
+        # if(self.value > value):
+        #     if(self.left == None):
+        #         self.left = BSTNode(value)
+        #     else:
+        #         self.left.insert(value)
+        # if(self.value <= value):
+        #     if(self.right == None):
+        #         self.right = BSTNode(value)
+        #     else:
+        #         self.right.insert(value)
 
 
     # Return True if the tree contains the value
