@@ -73,8 +73,8 @@ class LinkedList:
             current = self.head
             # traverse until we get to the Node right
             # before the tail Node
-        while current.get_next() != self.tail:
-            current = current.get_next()
+            while current.get_next() != self.tail:
+                current = current.get_next()
     # `current` is now pointing at the Node right
     # before the tail Node
             self.tail = None
@@ -137,15 +137,23 @@ class LinkedList:
      What is the runtime of this method?
      '''
 
+    # def get_max(self):
+    #     if self.head is None:
+    #         return None
+    #     max_num = 0
+    #     for n in self:
+    #         if n.value > max_num:
+    #             max_num = n.value
+    #     return max_num
 
-def get_max(self):
-    if self.head is None:
-        return None
-    max_so_far = self.head.get_value()
-    current = self.head.get_next()
-    while current is not None:
-        if current.get_value() > max_so_far:
-            max_so_far = current.get_value()
+    def get_max(self):
+        if self.head is None:
+            return None
+        max_so_far = self.head.get_value()
+        current = self.head.get_next()
+        while current is not None:
+            if current.get_value() > max_so_far:
+                max_so_far = current.get_value()
 
-    current = current.get_next()
-    return max_so_far
+        current = current.get_next()
+        return max_so_far
